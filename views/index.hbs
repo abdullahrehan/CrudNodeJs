@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container" >
+  <h2 style="text-align: center;background-color: cadetblue;color:black ;">Records Table</h2>
+  <div style="overflow: auto; height: 60vh;">
+  <table class="table" id="table" style="background-color: darkslategrey;color: white;overflow: scroll; ">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone No</th>
+        <th>Universty</th>
+        <th>Emial</th>
+        <th><a href="/form"><button style="color: white;background-color: teal;border: 1px solid #0000;padding-left: 15px;">Add new records</button></a></th>
+        <th>Records History</th>
+      </tr>
+    </thead>
+    <tbody>
+     {{#each data}}
+     
+      <tr>
+      <td>1</td>
+        <td>{{{this.Name}}}</td>
+        <td>{{this.Age}}</td>
+        <td>{{this.number}}</td>
+        <td>{{this.Universty}}</td>
+        <td>{{this.email}}</td>
+        <td ><a href='/delete/{{this.id}}'><button style="background-color: cadetblue;border: 1px solid #0006;border-radius:5px;color: white;">Delete</button>
+        </a >
+        <a href='/update/{{this.id}}'><button style="background-color: cadetblue;border: 1px solid #0006;border-radius:5px;color: white;margin-left: 20px;" >Update</button></a></td>
+        <td>Added by Abdullah</td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+</body>
+</html>
